@@ -4,9 +4,18 @@ import "package:path/path.dart";
 import "dart:io";
 import "dart:async";
 import "../models/item_model.dart";
+import "repository.dart";
 
-class NewsDbProvider {
+class NewsDbProvider implements Source, Cashe {
   Database db;
+
+  NewsDbProvider(){
+    init();
+  }
+
+  Future<List<int>> fetchTopIds(){
+    return null;
+  }
 
   void init() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
@@ -52,3 +61,5 @@ class NewsDbProvider {
     return db.insert("Items", item.toMapForDb());
   }
 }
+
+final newsDbProvider = NewsDbProvider();
