@@ -17,12 +17,12 @@ class ItemModel {
 
   ItemModel.fromJson(fromJson)
       : id = fromJson['id'],
-        deleted = fromJson['deleted'],
+        deleted = fromJson['deleted'] ?? false,
         type = fromJson['type'],
         by = fromJson['by'] ?? '',
         time = fromJson['time'],
         text = fromJson['text'] ?? '',
-        dead = fromJson['dead'],
+        dead = fromJson['dead'] ?? false,
         parent = fromJson['parent'],
         kids = fromJson['kids'] == null ? []: fromJson['kids'],
         url = fromJson['url'],

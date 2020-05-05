@@ -37,7 +37,7 @@ class ListScreen extends StatelessWidget {
         )
         );
         
-        ;
+
       },
     );
   }
